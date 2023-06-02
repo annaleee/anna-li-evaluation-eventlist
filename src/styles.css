@@ -1,0 +1,64 @@
+body {
+  font-family: sans-serif;
+  padding:10%;
+}
+.event-app{
+  display: flex;
+  flex-direction: column;
+  
+}
+.btn-primary{
+  width:160px;
+  height:40px;
+  background-color: #008cba;
+  color: white;
+  margin:10px;
+  border-radius: 10px;
+  border-color: #008cba;
+  align-self: center;
+}
+.event-app__list{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #e6e1cf;
+  border-width: 2px;
+}
+.event-app__title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size:x-large
+
+}
+.event-app__list-content-elem,.event-app__list-content-elem-form--new{
+  justify-content: space-around;
+  background-color: #e6e1cf;
+  margin:10px;
+  height: 50px;
+  align-items: center;
+}
+.event-app__list-content-elem-text,.event-app__list-content-elem-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  vertical-align: center;
+  align-items: center;
+  height:100%;
+}
+.event-app__list-content-elem-form--new{
+  display: flex;
+  flex-direction: row;
+}
+input{
+  border:none
+}
+.Btn{
+ background-color:white;
+ height:200;
+ width:30;
+}
+.Btn svg{
+  width: 20;
+    height: 20;
+  }
