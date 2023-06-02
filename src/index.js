@@ -175,32 +175,15 @@ class EventView {
 
     const showBtn = document.createElement("div");
     const writeBtnOuter = document.createElement("button");
-    const writeBtn = document.createElementNS("http://www.w3.org/2000/svg","svg");
-    writeBtn.setAttribute("focusable","false");
-    writeBtn.setAttribute("aria-hidden","true");
-    writeBtn.setAttribute("viewBox","0 0 24 24");
-    writeBtn.setAttribute("data-testid","EditIcon");
-    writeBtn.setAttribute("aria-label","fontSize small")
-    const writeBtnInner = document.createElementNS("http://www.w3.org/2000/svg","path");
-    writeBtnInner.setAttribute("d","M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z");
-    writeBtn.appendChild(writeBtnInner);
-    writeBtnOuter.append(writeBtn);
+    writeBtnOuter.innerHTML = `<img src="src/edit.svg" height="10" alt="edit"></img>`
     writeBtnOuter.classList.add("editBtn");
     writeBtnOuter.setAttribute("edit-id",event.id);
-    writeBtnOuter.classList.add("Btn")
+    writeBtnOuter.classList.add("btn-blue")
     const deleteBtnOuter = document.createElement("button");
-    const deleteBtn = document.createElement("svg");
-    deleteBtn.setAttribute("focusable","false");
-    deleteBtn.setAttribute("aria-hidden","true");
-    deleteBtn.setAttribute("viewBox","0 0 24 24");
-    deleteBtn.setAttribute("data-testid","DeleteIcon");
-    deleteBtn.setAttribute("aria-label","fontSize small")
-    const deleteBtnInner = document.createElement("path");
-    deleteBtnInner.setAttribute("d","M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z");
-    deleteBtn.append(deleteBtnInner);
-    deleteBtnOuter.append(deleteBtn);
+    deleteBtnOuter.innerHTML = `<img src="src/delete.svg" height="10"></img>`
     deleteBtnOuter.classList.add("deleteBtn");
     deleteBtnOuter.setAttribute("delete-id",event.id);
+    deleteBtnOuter.classList.add("btn-red")
     showBtn.append(writeBtnOuter,deleteBtnOuter);
 
     show.append(name,start,end,showBtn);
@@ -225,29 +208,14 @@ class EventView {
 
     const formBtn = document.createElement("div");
     const saveBtnOuter = document.createElement("button");
-    const saveBtn = document.createElementNS("http://www.w3.org/2000/svg","svg");
-    saveBtn.setAttribute("focusable","false");
-    saveBtn.setAttribute("aria-hidden","true");
-    saveBtn.setAttribute("viewBox","0 0 24 24");
-    saveBtn.setAttribute("xmlns","http://www.w3.org/2000/svg");
-    const saveBtnInner = document.createElementNS("http://www.w3.org/2000/svg","path");
-    saveBtnInner.setAttribute("d","M21,20V8.414a1,1,0,0,0-.293-.707L16.293,3.293A1,1,0,0,0,15.586,3H4A1,1,0,0,0,3,4V20a1,1,0,0,0,1,1H20A1,1,0,0,0,21,20ZM9,8h4a1,1,0,0,1,0,2H9A1,1,0,0,1,9,8Zm7,11H8V15a1,1,0,0,1,1-1h6a1,1,0,0,1,1,1Z");
-    saveBtn.append(saveBtnInner);
-    saveBtnOuter.append(saveBtn);
+    saveBtnOuter.innerHTML =`<img src="src/save.svg" height="15"></img>`;
     saveBtnOuter.classList.add("saveBtn");
     saveBtnOuter.setAttribute("save-id",event.id);
+    saveBtnOuter.classList.add("btn-blue");
     const cancelBtnOuter = document.createElement("button");
-    const cancelBtn = document.createElement("svg");
-    cancelBtn.setAttribute("focusable","false");
-    cancelBtn.setAttribute("aria-hidden","true");
-    cancelBtn.setAttribute("viewBox","0 0 32 32");
-    cancelBtn.setAttribute("version","1.1");
-    cancelBtn.setAttribute("xmlns","http://www.w3.org/2000/svg");
-    const cancelBtnInner = document.createElement("path");
-    cancelBtnInner.setAttribute("d","M19.587 16.001l6.096 6.096c0.396 0.396 0.396 1.039 0 1.435l-2.151 2.151c-0.396 0.396-1.038 0.396-1.435 0l-6.097-6.096-6.097 6.096c-0.396 0.396-1.038 0.396-1.434 0l-2.152-2.151c-0.396-0.396-0.396-1.038 0-1.435l6.097-6.096-6.097-6.097c-0.396-0.396-0.396-1.039 0-1.435l2.153-2.151c0.396-0.396 1.038-0.396 1.434 0l6.096 6.097 6.097-6.097c0.396-0.396 1.038-0.396 1.435 0l2.151 2.152c0.396 0.396 0.396 1.038 0 1.435l-6.096 6.096z");
-    cancelBtn.append(cancelBtnInner);
-    cancelBtnOuter.append(cancelBtn);
+    cancelBtnOuter.innerHTML = `<img src="src/cancel.svg" height="10"></img>`;
     cancelBtnOuter.classList.add("cancelBtn");
+    cancelBtnOuter.classList.add("btn-red")
     cancelBtnOuter.setAttribute("cancel-id",event.id);
     formBtn.append(saveBtnOuter,cancelBtnOuter);
 
@@ -276,32 +244,13 @@ class EventView {
 
     const formBtn = document.createElement("div");
     const saveBtnOuter = document.createElement("button");
-    const saveBtn = document.createElement("svg");
-    saveBtn.setAttribute("focusable","true");
-    saveBtn.setAttribute("aria-hidden","true");
-    saveBtn.setAttribute("viewBox","0 0 24 24");
-    saveBtn.setAttribute("xmlns","http://www.w3.org/2000/svg");
-    const saveBtnInner = document.createElement("path");
-    saveBtnInner.setAttribute("d","M12 6V18M18 12H6");
-    saveBtnInner.setAttribute("stroke","#FFFFFF");
-    saveBtnInner.setAttribute("stroke-width","4");
-    saveBtnInner.setAttribute("stroke-linecap","round");
-    saveBtnInner.setAttribute("stroke-linejoin","round")
-    saveBtn.append(saveBtnInner);
-    saveBtnOuter.append(saveBtn);
+    saveBtnOuter.innerHTML = `<img src="src/add.svg" height="10"></img>`;
     saveBtnOuter.classList.add("saveBtn-new");
+    saveBtnOuter.classList.add("btn-blue");
     const cancelBtnOuter = document.createElement("button");
-    const cancelBtn = document.createElement("svg");
-    cancelBtn.setAttribute("focusable","false");
-    cancelBtn.setAttribute("aria-hidden","true");
-    cancelBtn.setAttribute("viewBox","0 0 32 32");
-    cancelBtn.setAttribute("version","1.1");
-    cancelBtn.setAttribute("xmlns","http://www.w3.org/2000/svg");
-    const cancelBtnInner = document.createElement("path");
-    cancelBtnInner.setAttribute("d","M19.587 16.001l6.096 6.096c0.396 0.396 0.396 1.039 0 1.435l-2.151 2.151c-0.396 0.396-1.038 0.396-1.435 0l-6.097-6.096-6.097 6.096c-0.396 0.396-1.038 0.396-1.434 0l-2.152-2.151c-0.396-0.396-0.396-1.038 0-1.435l6.097-6.096-6.097-6.097c-0.396-0.396-0.396-1.039 0-1.435l2.153-2.151c0.396-0.396 1.038-0.396 1.434 0l6.096 6.097 6.097-6.097c0.396-0.396 1.038-0.396 1.435 0l2.151 2.152c0.396 0.396 0.396 1.038 0 1.435l-6.096 6.096z");
-    cancelBtn.append(cancelBtnInner);
-    cancelBtnOuter.append(cancelBtn);
+    cancelBtnOuter.innerHTML = `<img src="src/cancel-new.svg" height="10"></img>`;
     cancelBtnOuter.classList.add("cancelBtn-new");
+    cancelBtnOuter.classList.add("btn-red");
     formBtn.append(saveBtnOuter,cancelBtnOuter);
 
     submit.append(nameInput,startInput,endInput,formBtn);

@@ -53,12 +53,15 @@ body {
 input{
   border:none
 }
-.Btn{
- background-color:white;
- height:200;
- width:30;
+.btn-red{
+ background-color:#c94c4c;
+ border-color: #c94c4c;
 }
-.Btn svg{
-  width: 20;
-    height: 20;
-  }
+.btn-blue{
+  background-color:#008cba;
+  border-color:#008cba
+}
+.btn-blue,.btn-red{
+  border-radius: 5px;
+  margin:3px;
+}
