@@ -303,6 +303,10 @@ class EventController {
         const newName = document.getElementById(`eventTitleInput-${saveId}`).value;
         const newStart = document.getElementById(`eventStartInput-${saveId}`).value;
         const newEnd = document.getElementById(`eventEndInput-${saveId}`).value;
+        if(newName == ""||newStart == ""||newEnd ==""){
+          window.alert("you must fill out all text");
+          return
+        }
         this.model.editEvent(saveId,{
           "eventName":newName,
           "startDate":newStart,
@@ -318,6 +322,10 @@ class EventController {
         const newStart = document.getElementById(`eventStartInput-new`).value;
         const newEnd = document.getElementById(`eventEndInput-new`).value;
         console.log(newName)
+        if(newName == ""||newStart == ""||newEnd ==""){
+          window.alert("you must fill out all text");
+          return
+        }
         this.model.addEvent({
           "eventName":newName,
           "startDate":newStart,
