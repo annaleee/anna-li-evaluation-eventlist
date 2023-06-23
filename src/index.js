@@ -81,12 +81,32 @@ class EventModel {
     })
     return edit;
   }
+
+  async clearEvent(){
+    const today = new Date();
+    const clearList = this.#events.filter((event)=>{
+      const newdate = new Date(event.endDate);
+      console.log(event.start)
+      console.log(newdate)
+      return today > newdate;
+    })
+    this.#events = this.#events.filter((event)=>{
+      const newdate = new Date(event.endDate);
+      return today <= newdate;
+    })
+    clearList.forEach((event)=>{
+      this.removeEvent(event.id);
+    })
+    const result = 1?"a":"b";
+    return clearList;
+  }
 }
 
 class EventView {
   constructor(){
     this.eventList = document.querySelector(".event-app__list-content");
     this.addBtn = document.getElementById("event_add-new-btn");
+    this.removeBtn = document.getElementById("event_remove-expired-btn");
   }
 
   initRender(events) {
@@ -281,6 +301,15 @@ class EventController {
     this.view.addBtn.addEventListener("click",()=>{
       this.view.appendEditEvent();
     })
+    this.view.removeBtn.addEventListener("click",()=>{
+      this.model.clearEvent().then((clearList)=>{
+        console.log(clearList)
+        clearList.forEach((event)=>{
+        this.view.removeEvent(event.id)
+      })
+      })
+      
+    })
   }
 
   setUpBtnEvent() {
@@ -299,6 +328,7 @@ class EventController {
         this.model.removeEvent(removeId);
         this.view.removeEvent(removeId);
       }else if(isSaveBtn){
+        e.preventDefault();
         const saveId = e.target.getAttribute("save-id");
         const newName = document.getElementById(`eventTitleInput-${saveId}`).value;
         const newStart = document.getElementById(`eventStartInput-${saveId}`).value;
